@@ -1,0 +1,77 @@
+body {
+    font-family: 'Arial', sans-serif; 
+    background-image: url(https://i.pinimg.com/564x/19/93/77/1993772f7b7e4d4cbf04cbdf95d1af0e.jpg);
+}
+
+h2{
+    text-align: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-decoration: underline;
+    text-decoration-color: aqua;
+}
+.product-list-container {
+    padding: 20px; 
+    background-image: url(https://i.pinimg.com/564x/19/93/77/1993772f7b7e4d4cbf04cbdf95d1af0e.jpg);
+}
+
+.product-grid {
+    display: grid; 
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 20px; 
+}
+
+.product-card {
+    background-color: rgba(255, 0, 166, 0.388); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); 
+    padding: 15px; 
+    transition: transform 0.2s ease; 
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.product-name {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-description {
+    font-size: 1rem; 
+    margin-bottom: 15px; 
+}
+
+.product-actions {
+    display: flex; 
+    justify-content: space-between;
+}
+
+.edit-button,
+.delete-button {
+    padding: 10px 15px; 
+    border-radius: 5px; 
+    border: none; 
+    cursor: pointer;
+}
+
+.edit-button {
+    background-color: #000000df; 
+    color: white; 
+    text-decoration: none;
+}
+
+.delete-button {
+    background-color: rgba(0, 0, 241, 0.836);
+    color: white; 
+    text-decoration: none;
+}
+
+.edit-button:hover {
+    background-color: #000000;
+}
+
+.delete-button:hover {
+    background-color:  rgb(0, 0, 241);
+}

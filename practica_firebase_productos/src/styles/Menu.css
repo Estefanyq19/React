@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif; 
+    margin: 0; 
+}
+
+.navigation {
+    background-color: #f50097b8;
+    padding: 15px 30px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    z-index: 1000; 
+}
+
+.nav-list {
+    list-style-type: none; 
+    display: flex;
+    justify-content: space-around;
+    margin: 0; 
+    padding: 0;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 20px; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, transform 0.2s ease; 
+}
+
+.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.548); 
+    transform: scale(1.05); 
+}
+
+
+.main-content {
+    padding: 20px;
+}

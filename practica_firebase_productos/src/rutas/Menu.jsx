@@ -1,46 +1,80 @@
-import React from 'react'
-import { BrowserRouter, Link, Route, Routes } from 'react-router-dom'
-import Home from '../components/Home'
-import ListProducts from '../components/ListProducts'
-import RegisterProduct from '../components/RegisterProduct'
-import EditForm from '../components/EditForm'
+import '../styles/Menu.css';
+import React from 'react';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
+import Home from '../components/Home';
+import ListProducts from '../components/ListProducts';
+import RegisterProduct from '../components/RegisterProduct';
+import EditForm from '../components/EditForm';
+import Login from '../components/Login';
+import Register from '../components/RegisterForm';
+import { ProtectedRoute } from '../components/Auth';
+// Componente de navegación estilizado
+function Navigation() {
+    return (
+        <nav className="navigation">
+            <ul className="nav-list">
+                <li className="nav-item">
+                    <Link to="/" className="nav-link">Home</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/productos" className="nav-link">Productos</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/registro" className="nav-link">Registro de Producto</Link>
+                </li>
+            </ul>
+        </nav>
+    );
+}
 
 export default function Menu() {
-    /**
-     * BrowserRouter => Es el contenedor principal para la navegacion para que pueda trabajar con las rutas
-     * 
-     * Routes => contenedor que envuelves las rutas
-     */
     return (
         <BrowserRouter>
-            <header>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Home</Link>
-                        </li>
-                        <li>
-                            <Link to="/productos">Productos</Link>
-                        </li>
-                        <li>
-                            <Link to="/registro">Registro</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-
+            <Navigation />
             <Routes>
-                {/**
-                 * asignamos el nombre de la ruta y su componente
-                 */}
-                <Route path='/' element={<Home />}/>
-                <Route path='/productos' element={<ListProducts />}/>
-                <Route path='/registro' element={<RegisterProduct />}/>
-                <Route path='/prueba' element={<RegisterProduct />}/>
-                {/** creando una ruta con parametro */}
-                <Route path='/editar/:id' element={<EditForm />} />
+                {/* Ruta pública de login */}
+                <Route path="/login" element={<Login />} />
+                
+                {/* Ruta pública de registro de usuario */}
+                <Route path="/register" element={<Register />} />
+                
+                {/* Rutas protegidas */}
+                <Route 
+                    path="/" 
+                    element={
+                        <ProtectedRoute>
+                            <Home />
+                        </ProtectedRoute>
+                    }
+                />
+                
+                <Route 
+                    path="/productos" 
+                    element={
+                        <ProtectedRoute>
+                            <ListProducts />
+                        </ProtectedRoute>
+                    }
+                />
+                
+                <Route 
+                    path="/registro" 
+                    element={
+                        <ProtectedRoute>
+                            <RegisterProduct />
+                        </ProtectedRoute>
+                    }
+                />
+                
+                <Route 
+                    path="/editar/:id" 
+                    element={
+                        <ProtectedRoute>
+                            <EditForm />
+                        </ProtectedRoute>
+                    }
+                />
             </Routes>
         </BrowserRouter>
-        
-    )
+    );
 }

@@ -1,0 +1,107 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #82227b 0%, #000000d2 100%);
+}
+
+.login-title {
+    font-size: 2rem;
+    color: rgb(255, 255, 255);
+    margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.error-message {
+    color: rgb(0, 0, 0);
+    margin-bottom: 10px;
+}
+
+.login-form {
+    background-color: rgba(0, 255, 119, 0.379);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 75vh;
+    max-width: 90%; /* Limita el ancho en pantallas pequeñas */
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 768px) {
+    .login-form {
+        width: 100%; /* Ocupa el ancho completo */
+        padding: 15px;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .form-input, .submit-button {
+        width: 100%;
+        font-size: 1rem;
+    }
+
+    .form-group {
+        margin-bottom: 10px;
+    }
+
+    .submit-button {
+        padding: 12px;
+        font-size: 1rem;
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.form-input {
+    width: 95%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #000000;
+}
+
+.form-input:focus {
+    border-color: #000000;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #017c8247;
+}
+
+.register-link{
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-link:hover{
+    background-color: #017c8247;
+}
